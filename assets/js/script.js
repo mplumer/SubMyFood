@@ -4,6 +4,9 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     // Get the recipe the user typed in
     var recipe = document.querySelector("#recipeName").value;
     console.log(recipe);
+    // Save the recipe in local storage
+
+    // Save the recipe under Saved Recipes tab
 
     // Search for the recipe using the recipe-puppy api
     fetch("https://recipe-puppy.p.rapidapi.com/?q=" + recipe, {
@@ -23,10 +26,13 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     
         for(var i=0; i<= (numChoice-1); i++) {
             console.log(response.results[i].ingredients);
+
+            // create header for name of recipe
+            // create list for ingredients
+            // maybe a pic
+
         }
-        // create header for name of recipe
-        // create list for ingredients
-        // maybe a pic
+        
 
     })
     .catch(err => {
@@ -64,5 +70,5 @@ document.getElementById("cancelBtn").addEventListener("click", function () {
 - do we need the cancel button
 - do we want the recipes to append to the page or go to another page?
 - do we want the ingredients in the recipes to be clickable or do we want a 
-separate search field for substitutions
+separate search field for substitutions?
 */

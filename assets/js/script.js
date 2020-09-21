@@ -68,9 +68,10 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             
             articleDiv.appendChild(mediaContent);
             articleDiv.appendChild(imgContainer);
-            articleDiv.appendChild(subBtn);
-
+            
+            
             recipeCard.appendChild(articleDiv);
+            recipeCard.appendChild(subBtn);
             recipeContainer.appendChild(recipeCard);
         }
     })
@@ -107,7 +108,7 @@ document.getElementById("subBtn").addEventListener("click", function () {
 
 /* Features to discuss
 
-- do we want the recipes to append to the page or go to another page?
+
 - do we want the ingredients in the recipes to be clickable or do we want a 
 separate search field for substitutions?
 */

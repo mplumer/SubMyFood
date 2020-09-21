@@ -24,6 +24,7 @@ https://random-group-name.github.io/SubMyFood/
 ## Screenshots and updates of project:
 
 ![picture](./assets/images/screenshot1.png)
+![picture](./assets/images/screenshot2.png)
 
 
 

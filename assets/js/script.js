@@ -1,4 +1,4 @@
-
+var subBtn = document.getElementById("subBtn");
 document.getElementById("submitBtn").addEventListener("click", function () {
 
     // Get the recipe the user typed in
@@ -35,6 +35,9 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             var figureDiv = document.createElement("figure");
             figureDiv.classList.add("image");
 
+            
+            subBtn.classList.remove("is-invisible");
+
             // create header for name of recipe
             // and create list for ingredients
             var recipeName = response.results[i].title;
@@ -62,16 +65,14 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             recipeImg.src = response.results[i].thumbnail;
             figureDiv.appendChild(recipeImg);
             imgContainer.appendChild(figureDiv);
+            
             articleDiv.appendChild(mediaContent);
             articleDiv.appendChild(imgContainer);
+            articleDiv.appendChild(subBtn);
 
             recipeCard.appendChild(articleDiv);
-            
-        
             recipeContainer.appendChild(recipeCard);
         }
-        
-
     })
     .catch(err => {
         console.log(err);
@@ -100,12 +101,12 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
 });
 
-document.getElementById("cancelBtn").addEventListener("click", function () {
+document.getElementById("subBtn").addEventListener("click", function () {
     console.log("I was clicked!");
 });
 
 /* Features to discuss
-- do we need the cancel button
+
 - do we want the recipes to append to the page or go to another page?
 - do we want the ingredients in the recipes to be clickable or do we want a 
 separate search field for substitutions?

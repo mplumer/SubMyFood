@@ -20,17 +20,55 @@ document.getElementById("submitBtn").addEventListener("click", function () {
         return response.json();
     })
     .then(response => {
-    
+        console.log(response);
         // Get how many recipes the user would like to see
         var numChoice = document.getElementById("mySelect").value;
-    
+        var recipeContainer = document.querySelector(".recipe-container");
+        recipeContainer.innerHTML = "";
+
         for(var i=0; i<= (numChoice-1); i++) {
-            console.log(response.results[i].ingredients);
+            
+            var recipeCard = document.createElement("div");
+            recipeCard.classList.add("box");
+            var articleDiv = document.createElement("article");
+            articleDiv.classList.add("media");
+            var figureDiv = document.createElement("figure");
+            figureDiv.classList.add("image");
 
             // create header for name of recipe
-            // create list for ingredients
-            // maybe a pic
+            // and create list for ingredients
+            var recipeName = response.results[i].title;
+            var ingredients = response.results[i].ingredients;
+            var recipeTitle = document.createElement("h2");
+            var recipeIngs = document.createElement("p");
 
+            recipeIngs.innerHTML = ingredients;
+            recipeTitle.innerHTML = recipeName;
+
+            var mediaContent = document.createElement("div");
+            mediaContent.classList.add("media-content");
+            mediaContent.classList.add("media-right");
+            var content = document.createElement("div");
+            content.classList.add("content");
+
+            content.appendChild(recipeTitle);
+            content.appendChild(recipeIngs);
+            mediaContent.appendChild(content);
+
+            // create and append pic of recipe
+            var recipeImg = document.createElement("img");
+            var imgContainer = document.createElement("div");
+            imgContainer.classList.add("media-left");
+            recipeImg.src = response.results[i].thumbnail;
+            figureDiv.appendChild(recipeImg);
+            imgContainer.appendChild(figureDiv);
+            articleDiv.appendChild(mediaContent);
+            articleDiv.appendChild(imgContainer);
+
+            recipeCard.appendChild(articleDiv);
+            
+        
+            recipeContainer.appendChild(recipeCard);
         }
         
 

@@ -15,6 +15,15 @@ WHEN I refresh the page
 THEN my previous search options will be saved in the Saved Recipes drop-down
 
 
+## Built With:
+* HTML
+* CSS
+* JavaScript
+* Bulma
+* Recipe Puppy API
+* Meal-Hero API
+
+
 ## GitHub Repository:
 https://github.com/random-group-name/SubMyFood.git
 
@@ -24,7 +33,11 @@ https://random-group-name.github.io/SubMyFood/
 ## Screenshots and updates of project:
 
 ![picture](./assets/images/screenshot1.png)
+
 ![picture](./assets/images/screenshot2.png)
 
 
-
+## Contributions:
+* Alexandra Nance
+* Mera Youssef
+* Maxwell Plumer

@@ -27,15 +27,16 @@ document.getElementById("submitBtn").addEventListener("click", function () {
         var numChoice = document.getElementById("mySelect").value;
         var recipeContainer = document.querySelector(".recipe-container");
         recipeContainer.innerHTML = "";
-        //recipeContainer.classList.remove("is-invisible");
 
         for(let i=0; i<= (numChoice-1); i++) {
             
             var recipeLink = response.results[i].href;
             var anchorLink = document.createElement("a");
+            var anchorP = document.createElement("p");
             anchorLink.setAttribute("href", recipeLink);
-            anchorLink.innerHTML = "" + recipeLink;
-            console.log(anchorLink);
+            anchorLink.innerHTML = recipeLink;
+            console.log(anchorLink.textContent);
+            anchorP.appendChild(anchorLink);
             var subBtn = document.createElement("button");
             subBtn.innerHTML = "Substitute";
             subBtn.setAttribute("ingredients", response.results[i].ingredients);
@@ -45,15 +46,15 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             saveBtn.setAttribute("ingredients", response.results[i].ingredients);
             saveBtn.setAttribute("recipe_name", response.results[i].title);
 
-            
-
             saveBtn.addEventListener("click", function(event) {
                 console.log("I was too!");
-                
-                
+                // save the recipe card to local storage
+
+                // create dropdown-item and append to dropdown-content div
+
             });
 
-
+            // create card div to hold recipe info
             var recipeCard = document.createElement("div");
             recipeCard.classList.add("box");
             var articleDiv = document.createElement("article");
@@ -68,7 +69,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             var ingredients = response.results[i].ingredients;
             var recipeTitle = document.createElement("h2");
             var recipeIngs = document.createElement("p");
-            recipeIngs.appendChild(anchorLink);
+            
             recipeIngs.innerHTML = ingredients;
             recipeTitle.innerHTML = recipeName;
 
@@ -77,13 +78,12 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             mediaContent.classList.add("media-right");
             var content = document.createElement("div");
             content.classList.add("content");
-
             
             content.appendChild(recipeTitle);
             content.appendChild(recipeIngs);
-            
-            
+            content.appendChild(anchorP);
             mediaContent.appendChild(content);
+
             // create dropdown for substitutions
             subBtn.addEventListener("click", function(event) {
                 console.log("I was clicked!");
@@ -107,9 +107,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
                 })
                 
                 event.target.parentElement.appendChild(selectIng);
-                
             });
-
 
             // create and append pic of recipe
             var recipeImg = document.createElement("img");
@@ -122,7 +120,6 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             articleDiv.appendChild(mediaContent);
             articleDiv.appendChild(imgContainer);
             
-            
             recipeCard.appendChild(articleDiv);
             recipeCard.appendChild(subBtn);
             recipeCard.appendChild(saveBtn);
@@ -132,8 +129,6 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     .catch(err => {
         console.log(err);
     });
-
-    
 });
 
 function getSub(ingredient) {
@@ -151,10 +146,46 @@ function getSub(ingredient) {
 
         })
         .then(response => {
-            console.log(response);
+            
+            var modal = document.createElement("div");
+            modal.classList.add("modal");
+            modal.classList.add("is-active");
+            
+            var subContainer = document.createElement("div");
+            subContainer.classList.add("modal-card");
+
+            var subBackground = document.createElement("div");
+            subBackground.classList.add("modal-background");
+
+            var subExit = document.createElement("button");
+            subExit.classList.add("modal-close");
+
+            subExit.addEventListener("click", function() {
+                modal.classList.remove("is-active");
+            })
+
+            var modalContent = document.createElement("div");
+            modalContent.classList.add("modal-content");
+
+            modal.appendChild(subBackground);
+            modal.appendChild(subContainer);
+            modal.appendChild(subExit);
+            modal.appendChild(modalContent);
+            var recipeContainer = document.querySelector(".recipe-container");
+            recipeContainer.appendChild(modal);
+            
+
             for(let i = 0; i <response.food_substitutions.length; i++) {
                 console.log(response.food_substitutions[i].substitute.entity);
+                var subIngredients = response.food_substitutions[i].substitute.entity;
+                var subIngredientsList = document.createElement("ul");
+                var subIngredientsListItem = document.createElement("li");
+                subIngredientsListItem.innerHTML = subIngredients;
+                subIngredientsList.appendChild(subIngredientsListItem);
+
+                modalContent.appendChild(subIngredientsList);
             }
+            
         })
         .catch(err => {
             console.log(err);

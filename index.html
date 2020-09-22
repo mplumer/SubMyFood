@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- Alex's html -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,7 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <a class="navbar-item">
-                            <h1 class="title">SubMyFood</h1>
+                            <h1 class="title">SubMyFood <i class="fas fa-utensils"></i></h1>
                         </a>
                         <span class="navbar-burger burger" data-target="navbarMenu">
                             <span></span>
@@ -117,6 +117,7 @@
                             </button>
                         </p>
                     </div>
+
                     <div class="recipe-container">
                         <button id="subBtn" class="button is-primary is-rounded is-invisible">Click</button>
                         <div class="modal">
@@ -127,12 +128,42 @@
                             <button class="modal-close is-large" aria-label="close"></button>
                           </div>
                     </div>
+
+                    <div class="card recipe-container is-invisible">
+                        <header class="card-header">
+                          <p class="card-header-title">
+                            Component
+                          </p>
+                          <a href="#" class="card-header-icon" aria-label="more options">
+                            <span class="icon">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </a>
+                        </header>
+                        <div class="card-content">
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                        <footer class="card-footer">
+                          <a href="#" class="card-footer-item">Save</a>
+                          <a href="#" class="card-footer-item">Edit</a>
+                          <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                      </div>
+
+
+
+
                 </div>
             </div>
         </div>
 
     </section>
-    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>

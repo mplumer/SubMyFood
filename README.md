@@ -8,11 +8,13 @@ SO THAT I can still cook a meal without the missing ingredient
 ## Acceptance Criteria:
 GIVEN A search input   
 WHEN I search for an ingredient and choose from the dropdown how many recipe options to display  
-THEN I am presented with a list of recipes   
-WHEN I want to substitue an ingredient on the recipe list  
-THEN I can click the search button on the ingredients card to search the ingredient I  want to substitute and get an alternative ingredient  
+THEN I am presented with a list of ingredients and a link to the recipe   
+WHEN I want to substitue an ingredient on the ingredient list  
+THEN I can click the substitute button on the ingredients card and a dropdown menu of the ingredient will display and I can click on the ingredient I  want to substitute and a modal will pop up with a list of alternative ingredient  
+WHEN I am done viewing the modal, I can exit by clicking on the x on the top right corner  
+THEN if I like the receipe, I can click the save button  
 WHEN I refresh the page  
-THEN my previous search options will be saved in the Saved Recipes drop-down
+THEN my previously saved recipes will be saved in the Saved Recipes drop-down in the top right cocrner of the page
 
 
 ## Built With:

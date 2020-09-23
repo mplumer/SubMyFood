@@ -9,7 +9,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     // Save the recipe under Saved Recipes tab
 
     // Search for the recipe using the recipe-puppy api
-    fetch("https://recipe-puppy.p.rapidapi.com/?q=" + recipe, {
+    fetchs("https://recipe-puppy.p.rapidapi.com/?q=" + recipe, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "recipe-puppy.p.rapidapi.com",

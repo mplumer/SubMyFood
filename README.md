@@ -14,7 +14,9 @@ THEN I can click the substitute button on the ingredients card and a dropdown me
 WHEN I am done viewing the modal, I can exit by clicking on the x on the top right corner  
 THEN if I like the receipe, I can click the save button  
 WHEN I refresh the page  
-THEN my previously saved recipes will be saved in the Saved Recipes drop-down in the top right cocrner of the page
+THEN my previously saved recipes will be saved in the Saved Recipes drop-down in the top right corner of the page  
+WHEN I click on a saved recipe  
+THEN a card with that recipe appears on the page
 
 
 ## Built With:

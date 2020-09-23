@@ -142,7 +142,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
 function getSub(ingredient) {
 
-    /*fetch("https://meal-hero.p.rapidapi.com/api/annotations/foods/"+ ingredient + "/substitutions", {
+    fetch("https://meal-hero.p.rapidapi.com/api/annotations/foods/"+ ingredient + "/substitutions", {
         "method": "GET",
         "headers": {
                 "x-rapidapi-host": "meal-hero.p.rapidapi.com",
@@ -198,7 +198,7 @@ function getSub(ingredient) {
         })
         .catch(err => {
             console.log(err);
-        });*/
+        });
 };
 
 function saveRecipe(recipe) {

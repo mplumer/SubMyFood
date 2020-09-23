@@ -142,24 +142,24 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
 function getSub(ingredient) {
 
-    /*fetch("https://meal-hero.p.rapidapi.com/api/annotations/foods/"+ ingredient + "/substitutions", {
+    fetch("https://meal-hero.p.rapidapi.com/api/annotations/foods/" + ingredient + "/substitutions", {
         "method": "GET",
         "headers": {
-                "x-rapidapi-host": "meal-hero.p.rapidapi.com",
-                "x-rapidapi-key": "9ce51bbfeamsh6ee4d89a931f3b7p116f4bjsn94071dc14327"
+            "x-rapidapi-host": "meal-hero.p.rapidapi.com",
+            "x-rapidapi-key": "9ce51bbfeamsh6ee4d89a931f3b7p116f4bjsn94071dc14327"
         }
-        })
+    })
         .then(response => {
-            
+
             return response.json();
 
         })
         .then(response => {
-            
+
             var modal = document.createElement("div");
             modal.classList.add("modal");
             modal.classList.add("is-active");
-            
+
             var subContainer = document.createElement("div");
             subContainer.classList.add("modal-card");
 
@@ -169,7 +169,7 @@ function getSub(ingredient) {
             var subExit = document.createElement("button");
             subExit.classList.add("modal-close");
 
-            subExit.addEventListener("click", function() {
+            subExit.addEventListener("click", function () {
                 modal.classList.remove("is-active");
             })
 
@@ -182,10 +182,10 @@ function getSub(ingredient) {
             modal.appendChild(modalContent);
             var recipeContainer = document.querySelector(".recipe-container");
             recipeContainer.appendChild(modal);
-            
 
-            for(let i = 0; i <response.food_substitutions.length; i++) {
-                
+
+            for (let i = 0; i < response.food_substitutions.length; i++) {
+
                 var subIngredients = response.food_substitutions[i].substitute.entity;
                 var subIngredientsList = document.createElement("ul");
                 var subIngredientsListItem = document.createElement("li");
@@ -194,11 +194,11 @@ function getSub(ingredient) {
 
                 modalContent.appendChild(subIngredientsList);
             }
-            
+
         })
         .catch(err => {
             console.log(err);
-        });*/
+        });
 };
 
 function saveRecipe(recipe) {

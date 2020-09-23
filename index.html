@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- master html -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,8 @@
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" href="./assets/css/bulma.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/landing.css">
-    
-</script>
+
+    </script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <a class="navbar-item">
-                            <h1 class="title">SubMyFood</h1>
+                            <h1 class="title">SubMyFood <i class="fas fa-utensils"></i></h1>
                         </a>
                         <span class="navbar-burger burger" data-target="navbarMenu">
                             <span></span>
@@ -42,27 +42,27 @@
 
                             <span class="navbar-item">
                                 <div class="dropdown is-hoverable">
-                                <div class="dropdown-trigger">
-                                  <a class="button is-white is-outlined" href="#" aria-controls="dropdown-menu4">
-                                    
-                                    <span class="icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span>Saved Recipes</span>
-                                  
-                                </a>
-                                </div>
-                                <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                  <div class="dropdown-content">
-                                    <div class="dropdown-item">
-                                        <a href="#" class="dropdown-item">
-                                            Overview
-                                          </a>
+                                    <div class="dropdown-trigger">
+                                        <a class="button is-white is-outlined" href="#" aria-controls="dropdown-menu4">
+
+                                            <span class="icon">
+                                                <i class="fa fa-book"></i>
+                                            </span>
+                                            <span>Saved Recipes</span>
+
+                                        </a>
                                     </div>
-                                  </div>
+                                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                                        <div class="dropdown-content">
+                                            <div class="dropdown-item">
+                                                <a href="#" class="dropdown-item">
+
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
-                              </span>
+                            </span>
 
                         </div>
                     </div>
@@ -77,13 +77,17 @@
                         About Us
                     </h1>
                     <h2 class="subtitle">
-                        Here at SubMyFood, we understand that you sometimes need help with your recipes! Whether you've forgotten a spice at the grocery, you want to avoid a food allergy, or someone in the family can't stand a certain ingredient - we've been there! Below you can search for all kinds of recipes and substitute ingredients to make cooking just a little easier!
+                        Here at SubMyFood, we understand that you sometimes need help with your recipes! Whether you've
+                        forgotten a spice at the grocery, you want to avoid a food allergy, or someone in the family
+                        can't stand a certain ingredient - we've been there! Below you can search for all kinds of
+                        recipes and substitute ingredients to make cooking just a little easier!
                     </h2>
 
                     <div class="field">
                         <label class="label"></label>
                         <div class="control has-icons-left">
-                            <input id="recipeName" class="input is-success" type="text" placeholder="Search Recipe Here">
+                            <input id="recipeName" class="input is-success" type="text"
+                                placeholder="Search Recipe Here">
                             <span class="icon is-small is-left">
                                 <i class="fa fa-book" aria-hidden="true"></i>
                             </span>
@@ -98,14 +102,17 @@
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+
                                 </select>
                             </span>
                             <span class="icon is-small is-left">
-                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i>
-                                -->
+                                <i class="far fa-sticky-note"></i>
+
                             </span>
                         </div>
-                    </div> 
+                    </div>
 
                     <div class="field is-grouped is-grouped-centered">
                         <p class="control">
@@ -113,22 +120,54 @@
                                 Submit
                             </button>
                         </p>
-                        <p class="control">
-                            <button id="cancelBtn" class="button is-light">
-                                Cancel
-                            </button>
-                        </p>
-                        
                     </div>
-              <!-- <iframe scrolling="no" frameborder="0" allowTransparency="true" 
-                    src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=album&id=86304442&app_id=1" 
-                    width="700" height="350"></iframe> -->
+
+                    <div class="recipe-container">
+
+                        <div class="modal" id="modal">
+                            <div class="modal-background"></div>
+                            <div class="modal-content">
+                                <!-- Any other Bulma elements you want -->
+                            </div>
+                            <button class="modal-close is-large" aria-label="close"></button>
+                        </div>
+                    </div>
+
+                    <!--<div class="card recipe-container is-invisible">
+                        <header class="card-header">
+                          <p class="card-header-title">
+                            Component
+                          </p>
+                          <a href="#" class="card-header-icon" aria-label="more options">
+                            <span class="icon">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </a>
+                        </header>
+                        <div class="card-content">
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                        <footer class="card-footer">
+                          <a href="#" class="card-footer-item">Save</a>
+                          <a href="#" class="card-footer-item">Edit</a>
+                          <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                      </div>-->
+
+
+
+
                 </div>
             </div>
         </div>
 
     </section>
-    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
